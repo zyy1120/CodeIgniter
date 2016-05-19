@@ -1,25 +1,55 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 class Welcome extends CI_Controller {
+public function __construc() {
+parent::__construct();
+$this->load->database();
+}
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
-	public function index()
-	{
-		$this->load->view('welcome_message');
-	}
+public function index()
+{	
+$this->load->view('welcome_message'); 
+$this->load->library('javascript');
+}
+
+public function select(){
+$query = $this->db->query('SELECT userid, roomid FROM live_userinfo_kind');
+foreach ($query->result_array() as $row)
+{
+    echo (json_encode($row['userid']));
+    echo (json_encode($row['roomid']));
+}
+
+// 	$query = $this->db->get('live_userinfo_kind');
+// 		foreach ($query->result() as $row)
+// {
+//     echo $row->userid;
+// }
+}
+ public  function add(){
+    $data = array(
+               'userid' => '18217786',
+               'roomid' => '27',
+            );
+  //  exit(json_encode($data));
+    $this->db->insert('live_userinfo_kind', $data);
+ }
+
+
+public function delect(){
+	
+	$bool=$this->db->delete('live_userinfo_kind',array('id'=>'36'));
+}
+
+public function get_kind($slug = FALSE)
+{
+    if ($slug === FALSE)
+    {
+        $query = $this->db->get('live_userinfo_kind');
+        return $query->result_array();
+    }
+
+    $query = $this->db->get_where('live_userinfo_kind', array('slug' => $slug));
+    return $query->row_array();
+}
+
 }

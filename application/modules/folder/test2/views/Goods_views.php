@@ -6,10 +6,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<meta charset="utf-8">
 	<title>Welcome to CodeIgniter</title>
 
-	
 </head>
-<body>
-<?php $this->load->module('folder/test/home'); ?>
-<?php $this->load->module('folder/test2/Goods'); ?>
-</body>
-</html>
+
+	<h1> 这是呼呼！<h1>
+
+	
