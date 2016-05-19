@@ -126,7 +126,7 @@ class MY_model extends CI_Model {
 	 *$asc 升序DESC降序
 	 */
 
-	public function L($searchdata=array(), $selectField = "*",  $limit = 15, $offset = 0, $sort_field = '', $asc = 'DESC', $relation = '')
+	public function L($searchdata=array(), $selectField = "*",  $limit = 15, $offset = 0, $sort_field = '', $asc = 'asc', $relation = '')
 	{
 		if (empty($sort_field)) $sort_field = $this->tbl . "." . $this->tbl_key;
 		if (empty($relation)) $relation = $this->tbl_key;
