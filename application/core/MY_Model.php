@@ -124,9 +124,10 @@ class MY_model extends CI_Model {
 	 * @param int $limit 显示条数
 	 *$sort_field 排序字段
 	 *$asc 升序DESC降序
+	 *$searchdata搜索的数据
 	 */
 
-	public function L($searchdata=array(), $selectField = "*",  $limit = 15, $offset = 0, $sort_field = '', $asc = 'asc', $relation = '')
+	public function L($searchdata=array(), $selectField = "*",  $limit = 15, $offset = 0, $sort_field = '', $asc = 'sac', $relation = '')
 	{
 		if (empty($sort_field)) $sort_field = $this->tbl . "." . $this->tbl_key;
 		if (empty($relation)) $relation = $this->tbl_key;
@@ -158,7 +159,7 @@ class MY_model extends CI_Model {
 	* @param string $relation 数据表-ID字段名
 	*/
 
-	public function O($searchdata, $selectField = '*', $sort_field = '', $asc = 'desc', $relation = '')
+	public function O($searchdata,$selectField = '*', $sort_field = '', $asc = 'desc', $relation = '')
 	{
 		if (empty($sort_field)) $sort_field = $this->tbl . "." . $this->tbl_key;
 		if (empty($relation)) $relation = $this->tbl_key;

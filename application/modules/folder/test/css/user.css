@@ -1,1 +1,12 @@
-.head{height:76px; background:url(../img/1.gif)}
+.body{
+	margin: 0 auto;
+}
+img{
+	height:46px;
+	margin: 0 300px;
+
+}
+.zt{
+	color: blue;
+	font-size: 30px;
+}

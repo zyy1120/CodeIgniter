@@ -2,16 +2,16 @@
 
 class Folder_Test_User_model extends CI_Model {
 
-    function __construct()
-    {
-        parent::__construct();
-       
-    }
+function __construct()
+{
+parent::__construct();
 
-    function start()
-    {
-      
-  }
-    }
+}
+
+function start()
+{
+
+}
+}
 
 
